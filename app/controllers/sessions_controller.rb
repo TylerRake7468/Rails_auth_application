@@ -8,7 +8,7 @@ class SessionsController < ApplicationController
             login user
             redirect_to root_path, notice: "You have successfully logged in."
         else
-            notice['alert'] = "Invalid Id or Password"
+            flash[:alert] = "Invalid Id or Password"
             render :new, status: :unprocessable_entity
         end
     end
